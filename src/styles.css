@@ -13,14 +13,3 @@ body,
   height: 100%;
   overflow-x: hidden;
 }
-
-.ListItemEven,
-.ListItemOdd {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.ListItemEven {
-  background-color: #f8f8f0;
-}
