@@ -3,7 +3,7 @@ import {
   SELECTED,
   SHIFT_DESELECT_PREVIEW,
   NOT_SELECTED
-} from "../../../BulkSelectionContext";
+} from "../../BulkSelection";
 
 const colors = {
   [SELECTED]: "#fff",

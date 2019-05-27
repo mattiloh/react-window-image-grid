@@ -1,8 +1,8 @@
-import React, { useState, useCallback, Fragment } from "react";
+import React, { useState, useCallback } from "react";
 import { render } from "react-dom";
 import "./styles.css";
 import List from "./List";
-import { BulkSelectionProvider } from "./BulkSelectionContext";
+import { BulkSelectionProvider } from "./components/BulkSelection";
 const NUM_ITEMS = 1000;
 const createItems = num =>
   Array(num)
@@ -26,9 +26,10 @@ const App = () => {
     const newItems = shuffleArray(items);
     setItems(newItems);
   }, [items]);
+  const getItemId = useCallback(item => String(item.id), []);
 
   return (
-    <BulkSelectionProvider data={items}>
+    <BulkSelectionProvider getItemId={getItemId} data={items}>
       <List
         items={items}
         changeNumItems={changeNumItems}

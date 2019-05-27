@@ -3,7 +3,7 @@ import Container from "./components/Container";
 import SquareBox from "./components/SquareBox";
 import Caption from "./components/Caption";
 import ColorTile from "./components/ColorTile";
-import { useSelectable, SELECTED } from "../../BulkSelectionContext";
+import { useSelectable, SELECTED } from "../BulkSelection";
 
 // Keep image separated as memoized component to avoid re-renders
 // due to selection changes.
@@ -24,22 +24,9 @@ const Image = memo(
 );
 
 export default ({ index, data, width, dataLength }) => {
-  const {
-    selected,
-    shiftSelected,
-    select,
-    shiftSelect,
-    deselect
-  } = useSelectable(data.id, index);
-  const toggleSelect = useCallback(
-    e => {
-      e.preventDefault();
-      if (selected === SELECTED) {
-        return deselect();
-      }
-      return select();
-    },
-    [selected, deselect, select]
+  const { selected, shiftSelected, toggleSelect, shiftSelect } = useSelectable(
+    data.id,
+    index
   );
 
   return (

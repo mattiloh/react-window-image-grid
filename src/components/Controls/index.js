@@ -2,7 +2,7 @@ import React, { useState, useCallback } from "react";
 import PropTypes from "prop-types";
 import Container from "./Container";
 import Input from "./Input";
-import { useBulkSelection } from "../../BulkSelectionContext";
+import { useBulkSelection } from "../BulkSelection";
 
 const Controls = ({
   changeNumItems,
@@ -45,7 +45,7 @@ const Controls = ({
       <strong>Selection ({selectionSize})</strong>
       <button onClick={clearSelection}>clear</button>
       <button onClick={selectAll}>all</button>
-      <a href="https://codesandbox.io/s/lpm6jl3oqz">Code</a>
+      <a href="https://codesandbox.io/s/imagegrid-with-padding-m6n0n">Code</a>
     </Container>
   );
 };
